@@ -334,7 +334,7 @@ void FExrMediaPlayer::TickVideo(float DeltaTime)
 	// re-initialize sink if format changed
 	if (VideoSink->GetTextureSinkDimensions() != Dim)
 	{
-		if (!VideoSink->InitializeTextureSink(Dim, Dim, EMediaTextureSinkFormat::FloatRGBA, EMediaTextureSinkColorSpace::Linear, EMediaTextureSinkMode::Unbuffered))
+		if (!VideoSink->InitializeTextureSink(Dim, Dim, EMediaTextureSinkFormat::FloatRGBA, EMediaTextureSinkMode::Unbuffered))
 		{
 			return;
 		}
@@ -393,7 +393,7 @@ void FExrMediaPlayer::SetVideoSink(IMediaTextureSink* Sink)
 
 	if (Sink != nullptr)
 	{
-		Sink->InitializeTextureSink(CurrentDim, CurrentDim, EMediaTextureSinkFormat::FloatRGBA, EMediaTextureSinkColorSpace::Linear, EMediaTextureSinkMode::Unbuffered);
+		Sink->InitializeTextureSink(CurrentDim, CurrentDim, EMediaTextureSinkFormat::FloatRGBA, EMediaTextureSinkMode::Unbuffered);
 	}
 }
 
