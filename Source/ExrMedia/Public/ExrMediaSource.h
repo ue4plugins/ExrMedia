@@ -39,9 +39,9 @@ public:
 	 * @return The file path.
 	 * @see SetSourceDirectory
 	 */
-	const FString& GetSourceDirectory() const
+	const FString& GetSequencePath() const
 	{
-		return SourceDirectory.Path;
+		return SequencePath.Path;
 	}
 
 	/**
@@ -51,7 +51,7 @@ public:
 	 * @see SourceDirectory
 	 */
 	UFUNCTION(BlueprintCallable, Category="ExrMedia|ExrMediaSource")
-	void SetSourceDirectory(const FString& Path);
+	void SetSequencePath(const FString& Path);
 
 public:
 
@@ -69,7 +69,12 @@ public:
 
 protected:
 
+	/** Get the full path to the image sequence. */
+	FString GetFullPath() const;
+
+protected:
+
 	/** The directory that contains the EXR image sequence files. */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category=EXR)
-	FDirectoryPath SourceDirectory;
+	FDirectoryPath SequencePath;
 };

@@ -24,7 +24,7 @@ UExrMediaSourceFactory::UExrMediaSourceFactory(const FObjectInitializer& ObjectI
 UObject* UExrMediaSourceFactory::FactoryCreateFile(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags, const FString& Filename, const TCHAR* Parms, FFeedbackContext* Warn, bool& bOutOperationCanceled)
 {
 	UExrMediaSource* MediaSource = NewObject<UExrMediaSource>(InParent, InClass, InName, Flags);
-	MediaSource->SetSourceDirectory(FPaths::GetPath(CurrentFilename));
+	MediaSource->SetSequencePath(FPaths::GetPath(CurrentFilename));
 
 	return MediaSource;
 }

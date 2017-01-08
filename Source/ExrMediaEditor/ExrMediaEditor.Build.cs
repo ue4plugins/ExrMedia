@@ -10,9 +10,13 @@ namespace UnrealBuildTool.Rules
 				new string[] {
 					"Core",
 					"CoreUObject",
+                    "DesktopWidgets",
+                    "EditorStyle",
                     "ExrMedia",
 					"MediaAssets",
-					"UnrealEd",
+                    "Slate",
+                    "SlateCore",
+                    "UnrealEd",
                 }
 			);
 
@@ -25,6 +29,7 @@ namespace UnrealBuildTool.Rules
             PrivateIncludePaths.AddRange(
 				new string[] {
 					"ExrMediaEditor/Private",
+                    "ExrMediaEditor/Private/Customizations",
                     "ExrMediaEditor/Private/Factories",
                 }
 			);

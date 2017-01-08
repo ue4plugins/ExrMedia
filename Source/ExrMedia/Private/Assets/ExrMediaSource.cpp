@@ -17,9 +17,27 @@ UExrMediaSource::UExrMediaSource()
 /* UExrMediaSource interface
  *****************************************************************************/
 
-void UExrMediaSource::SetSourceDirectory(const FString& Path)
+void UExrMediaSource::SetSequencePath(const FString& Path)
 {
-	SourceDirectory.Path = FPaths::GetPath(Path);
+	const FString SanitizedPath = FPaths::GetPath(Path);
+
+	if (SanitizedPath.IsEmpty() || SanitizedPath.StartsWith(TEXT(".")))
+	{
+		SequencePath.Path = SanitizedPath;
+	}
+	else
+	{
+		FString FullPath = FPaths::ConvertRelativePathToFull(SanitizedPath);
+		const FString FullGameContentDir = FPaths::ConvertRelativePathToFull(FPaths::GameContentDir());
+
+		if (FullPath.StartsWith(FullGameContentDir))
+		{
+			FPaths::MakePathRelativeTo(FullPath, *FullGameContentDir);
+			FullPath = FString(TEXT("./")) + FullPath;
+		}
+
+		SequencePath.Path = FullPath;
+	}
 }
 
 
@@ -53,11 +71,30 @@ bool UExrMediaSource::HasMediaOption(const FName& Key) const
 
 FString UExrMediaSource::GetUrl() const
 {
-	return FString(TEXT("exr://")) + SourceDirectory.Path;
+	return FString(TEXT("exr://")) + GetFullPath();
 }
 
 
 bool UExrMediaSource::Validate() const
 {
-	return FPaths::DirectoryExists(SourceDirectory.Path);
+	return FPaths::DirectoryExists(GetFullPath());
+}
+
+
+/* UFileMediaSource implementation
+ *****************************************************************************/
+
+FString UExrMediaSource::GetFullPath() const
+{
+	if (!FPaths::IsRelative(SequencePath.Path))
+	{
+		return SequencePath.Path;
+	}
+
+	if (SequencePath.Path.StartsWith(TEXT("./")))
+	{
+		return FPaths::ConvertRelativePathToFull(FPaths::GameContentDir(), SequencePath.Path.RightChop(2));
+	}
+
+	return FPaths::ConvertRelativePathToFull(SequencePath.Path);
 }
