@@ -19,7 +19,7 @@
 	[
 		{
 			"Name" : "ExrMedia",
-			"Type" : "Runtime",
+			"Type" : "RuntimeNoCommandlet",
 			"LoadingPhase" : "PreLoadingScreen",
 			"WhitelistPlatforms" : [ "Win32", "Win64" ]
 		},
@@ -31,13 +31,13 @@
 		},
 		{
 			"Name" : "ExrMediaFactory",
-			"Type" : "Runtime",
+			"Type" : "RuntimeNoCommandlet",
 			"LoadingPhase" : "PostEngineInit",
 			"WhitelistPlatforms" : [ "Win32", "Win64" ]
 		},
 		{
 			"Name" : "OpenExrWrapper",
-			"Type" : "Runtime",
+			"Type" : "RuntimeNoCommandlet",
 			"LoadingPhase" : "PostEngineInit",
 			"WhitelistPlatforms" : [ "Win32", "Win64" ]
 		}
