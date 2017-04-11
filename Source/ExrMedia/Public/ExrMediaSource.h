@@ -2,11 +2,11 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "BaseMediaSource.h"
 #include "Classes/Engine/EngineTypes.h"
+#include "Containers/UnrealString.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
-#include "BaseMediaSource.h"
 
 #include "ExrMediaSource.generated.h"
 

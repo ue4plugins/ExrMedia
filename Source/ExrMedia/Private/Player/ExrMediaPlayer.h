@@ -2,11 +2,16 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "CoreTypes.h"
+#include "Containers/Array.h"
+#include "Containers/UnrealString.h"
 #include "IMediaControls.h"
 #include "IMediaPlayer.h"
 #include "IMediaOutput.h"
 #include "IMediaTracks.h"
+#include "Math/IntPoint.h"
+
+class IMediaTextureSink;
 
 
 /**

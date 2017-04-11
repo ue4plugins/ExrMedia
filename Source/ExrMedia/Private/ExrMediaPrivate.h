@@ -2,7 +2,8 @@
 
 #pragma once
 
-#include "Runtime/Core/Public/CoreMinimal.h"
+#include "Logging/LogMacros.h"
+#include "UObject/NameTypes.h"
 
 #include "../../ExrMediaFactory/Public/ExrMediaSettings.h"
 

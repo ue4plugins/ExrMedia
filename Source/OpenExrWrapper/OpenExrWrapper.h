@@ -2,7 +2,10 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "CoreTypes.h"
+#include "Math/IntPoint.h"
+
+class FString;
 
 
 class OPENEXRWRAPPER_API FRgbaInputFile

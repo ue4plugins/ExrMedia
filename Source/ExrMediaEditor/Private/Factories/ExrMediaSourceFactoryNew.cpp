@@ -4,6 +4,7 @@
 
 #include "AssetTypeCategories.h"
 #include "ExrMediaSource.h"
+#include "UObject/UObjectGlobals.h"
 
 
 /* UExrMediaSourceFactoryNew structors

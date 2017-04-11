@@ -1,8 +1,11 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
 #include "ExrMediaSourceFactory.h"
+
+#include "Containers/Array.h"
 #include "Misc/Paths.h"
 #include "ExrMediaSource.h"
+#include "UObject/UObjectGlobals.h"
 
 
 /* UExrFileMediaSourceFactory structors

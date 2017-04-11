@@ -3,11 +3,13 @@
 
 #include "OpenExrWrapper.h"
 
+#include "Containers/UnrealString.h"
+#include "Modules/ModuleManager.h"
+
 #include "ImathBox.h"
 #include "ImfHeader.h"
 #include "ImfRgbaFile.h"
 #include "ImfStandardAttributes.h"
-#include "Modules/ModuleManager.h"
 
 
 FRgbaInputFile::FRgbaInputFile(const FString& FilePath)

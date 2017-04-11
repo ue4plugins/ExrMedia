@@ -2,10 +2,11 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "UObject/ObjectMacros.h"
 #include "Factories/Factory.h"
+
 #include "ExrMediaSourceFactory.generated.h"
+
 
 /**
  * Implements a factory for UExrMediaSource objects.

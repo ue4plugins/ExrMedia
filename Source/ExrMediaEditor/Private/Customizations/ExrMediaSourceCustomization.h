@@ -2,9 +2,10 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "Layout/Visibility.h"
+#include "Containers/UnrealString.h"
 #include "IDetailCustomization.h"
+#include "Layout/Visibility.h"
+#include "Templates/SharedPointer.h"
 
 class IDetailLayoutBuilder;
 class IPropertyHandle;

@@ -1,12 +1,14 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
-#include "CoreMinimal.h"
 #include "ExrMediaFactoryPrivate.h"
+
+#include "Containers/UnrealString.h"
 #include "ExrMediaSettings.h"
-#include "IMediaModule.h"
 #include "IExrMediaModule.h"
+#include "IMediaModule.h"
 #include "IMediaOptions.h"
 #include "IMediaPlayerFactory.h"
+#include "Internationalization/Text.h"
 #include "Misc/Paths.h"
 #include "Modules/ModuleInterface.h"
 #include "Modules/ModuleManager.h"
