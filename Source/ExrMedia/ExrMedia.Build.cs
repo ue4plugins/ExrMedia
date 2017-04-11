@@ -4,8 +4,10 @@ namespace UnrealBuildTool.Rules
 {
 	public class ExrMedia : ModuleRules
 	{
-		public ExrMedia(TargetInfo Target)
+		public ExrMedia(ReadOnlyTargetRules Target) : base(Target)
 		{
+            PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
             DynamicallyLoadedModuleNames.AddRange(
 				new string[] {
 					"Media",

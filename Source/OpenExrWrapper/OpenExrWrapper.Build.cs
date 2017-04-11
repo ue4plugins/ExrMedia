@@ -4,9 +4,10 @@ namespace UnrealBuildTool.Rules
 {
 	public class OpenExrWrapper : ModuleRules
 	{
-		public OpenExrWrapper(TargetInfo Target)
+		public OpenExrWrapper(ReadOnlyTargetRules Target) : base(Target)
 		{
             bUseRTTI = true;
+            PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
             PublicDependencyModuleNames.Add("Core");
 

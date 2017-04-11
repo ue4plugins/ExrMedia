@@ -4,9 +4,11 @@ namespace UnrealBuildTool.Rules
 {
 	public class ExrMediaEditor : ModuleRules
 	{
-		public ExrMediaEditor(TargetInfo Target)
+		public ExrMediaEditor(ReadOnlyTargetRules Target) : base(Target)
 		{
-			PrivateDependencyModuleNames.AddRange(
+            PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+            PrivateDependencyModuleNames.AddRange(
 				new string[] {
 					"Core",
 					"CoreUObject",
